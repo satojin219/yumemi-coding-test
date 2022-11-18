@@ -5,6 +5,7 @@ extends:
   - plugin:react/recommended
   - plugin:react-hooks/recommended
   - standard-with-typescript
+  - prettier
 overrides: []
 parserOptions:
   ecmaVersion: latest
@@ -19,5 +20,5 @@ rules:
     react-hooks/exhaustive-deps: warn,
     react/react-in-jsx-scope: off,
     semi: off,
-    "@typescript-eslint/semi": off,
+    '@typescript-eslint/semi': off
   }
