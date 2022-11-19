@@ -11,10 +11,15 @@
     "lintfix": "npm run lint -- --fix",
     "format": "prettier --write \"**/*.+(js|json|yml|ts|tsx)\"",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "test": "vitest",
+    "testrun": "vitest run"
   },
   "dependencies": {
+    "@tanstack/react-query": "^4.16.1",
     "@types/aria-query": "^5.0.1",
+    "@types/babel__generator": "^7.6.4",
+    "dotenv": "^16.0.3",
     "eslint": "^8.0.1",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-react-hooks": "^4.6.0",
@@ -32,6 +37,7 @@
     "@storybook/builder-vite": "^0.2.5",
     "@storybook/react": "^6.5.13",
     "@storybook/testing-library": "^0.0.13",
+    "@testing-library/react": "^13.4.0",
     "@types/react": "^18.0.24",
     "@types/react-dom": "^18.0.8",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
@@ -43,7 +49,10 @@
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-react": "^7.31.11",
     "eslint-plugin-storybook": "^0.6.7",
+    "happy-dom": "^7.7.0",
+    "msw": "^0.49.0",
     "typescript": "*",
-    "vite": "^3.2.3"
+    "vite": "^3.2.3",
+    "vitest": "^0.25.2"
   }
 }
