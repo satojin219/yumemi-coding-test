@@ -9,7 +9,9 @@
     "preview": "vite preview",
     "lint": "eslint --ext .tsx,.ts src/",
     "lintfix": "npm run lint -- --fix",
-    "format": "prettier --write \"**/*.+(js|json|yml|ts|tsx)\""
+    "format": "prettier --write \"**/*.+(js|json|yml|ts|tsx)\"",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "eslint": "^8.0.1",
@@ -20,15 +22,25 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.20.2",
+    "@storybook/addon-actions": "^6.5.13",
+    "@storybook/addon-essentials": "^6.5.13",
+    "@storybook/addon-interactions": "^6.5.13",
+    "@storybook/addon-links": "^6.5.13",
+    "@storybook/builder-vite": "^0.2.5",
+    "@storybook/react": "^6.5.13",
+    "@storybook/testing-library": "^0.0.13",
     "@types/react": "^18.0.24",
     "@types/react-dom": "^18.0.8",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "@vitejs/plugin-react": "^2.2.0",
+    "babel-loader": "^8.3.0",
     "eslint-config-standard-with-typescript": "^23.0.0",
     "eslint-plugin-import": "^2.25.2",
     "eslint-plugin-n": "^15.0.0",
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-react": "^7.31.11",
+    "eslint-plugin-storybook": "^0.6.7",
     "typescript": "*",
     "vite": "^3.2.3"
   }
