@@ -31,6 +31,7 @@ describe('useFetchPrefectures', () => {
   test('API通信成功', async () => {
     const { result } = renderHook(() => useFetchPrefectures(), { wrapper })
     await waitFor(() => expect(result.current.isSuccess).toBe(true))
+    await waitFor(() => expect(result.current.data.result).toHaveLength(47))
     expect(result.current.error).toBeNull()
     expect(result.current.isLoading).toBeFalsy()
   })
