@@ -1,13 +1,20 @@
 import { ReactElement, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
+import { Global, css } from '@emotion/react'
+import noramlize from 'normalize.css'
 import { QueryClient, QueryClientProvider } from 'react-query'
+
+const styles = css`
+  ${noramlize}
+`
 
 function App(): ReactElement {
   const [count, setCount] = useState(0)
   const queryClient = new QueryClient()
   return (
     <QueryClientProvider client={queryClient}>
+      <Global styles={styles} />
       <div className="App">
         <div>
           <a
