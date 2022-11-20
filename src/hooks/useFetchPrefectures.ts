@@ -1,7 +1,7 @@
 import { APIResponse, Prefecture } from './../types/globalType'
-import { useQuery } from 'react-query'
+import { useQuery, UseQueryResult } from 'react-query'
 
-const getPrefectures = async (): Promise<APIResponse<Prefecture>> => {
+const getPrefectures = async (): Promise<APIResponse<Prefecture[]>> => {
   const response: Response = await fetch(
     'https://opendata.resas-portal.go.jp/api/v1/prefectures',
     {
@@ -11,8 +11,11 @@ const getPrefectures = async (): Promise<APIResponse<Prefecture>> => {
   return await response.json()
 }
 
-export const useFetchPrefectures = (): any => {
-  return useQuery<APIResponse<Prefecture>, Error>(
+export const useFetchPrefectures = (): UseQueryResult<
+  APIResponse<Prefecture[]>,
+  Error
+> => {
+  return useQuery<APIResponse<Prefecture[]>, Error>(
     ['prefectures'],
     getPrefectures
   )

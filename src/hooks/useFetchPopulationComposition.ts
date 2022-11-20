@@ -1,8 +1,5 @@
-import { useQuery } from 'react-query'
-import {
-  APIResponse,
-  populationComposition
-} from '../types/globalType'
+import { useQuery, UseQueryResult } from 'react-query'
+import { APIResponse, populationComposition } from '../types/globalType'
 
 const getPopulationComposition = async (
   prefCode: number
@@ -18,7 +15,9 @@ const getPopulationComposition = async (
   return await response.json()
 }
 
-export const useFetchPopulationComposition = (prefCode: number): any => {
+export const useFetchPopulationComposition = (
+  prefCode: number
+): UseQueryResult<APIResponse<populationComposition>, Error> => {
   return useQuery<APIResponse<populationComposition>, Error>(
     ['populationComposition'],
     async () => await getPopulationComposition(prefCode)
