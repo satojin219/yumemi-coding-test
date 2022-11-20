@@ -1,6 +1,5 @@
 import { ReactElement, useState } from 'react'
 import reactLogo from './assets/react.svg'
-import './App.css'
 import { Global, css } from '@emotion/react'
 import noramlize from 'normalize.css'
 import { QueryClient, QueryClientProvider } from 'react-query'
