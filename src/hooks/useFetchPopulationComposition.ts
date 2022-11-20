@@ -1,7 +1,7 @@
 import { useQuery, UseQueryResult } from 'react-query'
 import { APIResponse, populationComposition } from '../types/globalType'
 
-const getPopulationComposition = async (
+export const getPopulationComposition = async (
   prefCode: number
 ): Promise<APIResponse<populationComposition>> => {
   const response: Response = await fetch(

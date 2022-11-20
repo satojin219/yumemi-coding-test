@@ -2,14 +2,14 @@ export type Prefecture = {
   prefCode: number
   prefName: string
 }
-type PerYearPupulationData = {
+export type PerYearPopulationData = {
   year: number
   value: number
 }
 
 type populationType = {
   label: string
-  data: PerYearPupulationData[]
+  data: PerYearPopulationData[]
 }
 
 export type populationComposition = {
@@ -24,4 +24,9 @@ export type PrefecutresResponse = {
 export type APIResponse<T> = {
   message: null
   result: T
+}
+
+export type CheckedPopulation = {
+  categories?: string[]
+  series?: Highcharts.SeriesOptionsType[]
 }
