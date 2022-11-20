@@ -2,7 +2,7 @@ import Highcharts from 'highcharts/highstock'
 import HighchartsReact from 'highcharts-react-official'
 
 type Props = {
-  categories:  string[]
+  categories: string[]
   series: Highcharts.SeriesOptionsType[]
 }
 
@@ -21,12 +21,12 @@ export const HighChartGraph: React.FC<Props> = (props) => {
     },
     yAxis: {
       title: {
-        text: '人口数'
+        text: '人口数(万)'
       },
       gridLineWidth: 1,
       labels: {
         formatter() {
-          return `${(this.value as number) / 1}`
+          return `${(this.value as number) / 10000}`
         }
       }
     },
@@ -42,7 +42,10 @@ export const HighChartGraph: React.FC<Props> = (props) => {
       valueSuffix: '人',
       shared: true
     },
-    series: props.series
+    series:
+      props.series.length === 0
+        ? [{ type: 'line', name: '47都道府県', data: [] }]
+        : props.series
   }
 
   return <HighchartsReact highcharts={Highcharts} options={options} />

@@ -30,5 +30,6 @@ rules:
     '@typescript-eslint/semi': off,
     '@typescript-eslint/consistent-type-definitions': off,
     'react/no-unknown-property': ['error', { 'ignore': ['css'] }],
-    react/prop-types: off
+    react/prop-types: off,
+    prefer-const: off
   }

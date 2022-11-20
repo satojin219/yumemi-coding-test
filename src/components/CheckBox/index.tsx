@@ -4,7 +4,7 @@ import { css } from '@emotion/react'
 type Props = {
   label: string
   value: number
-  onChange: (_: number) => void
+  onChange: (prefCode: number,prefName: string, isCheck: boolean) => void
 }
 
 export const CheckBox: React.FC<Props> = (props) => {
@@ -18,7 +18,10 @@ export const CheckBox: React.FC<Props> = (props) => {
         type="checkbox"
         value={props.value}
         id={`check_box_${props.value}`}
-        onClick={() => props.onChange(props.value)}
+        onClick={(event) => {
+          props.onChange(props.value,props.label, event.currentTarget?.checked)
+        }
+        }
       />
       <label htmlFor="">{props.label}</label>
     </div>

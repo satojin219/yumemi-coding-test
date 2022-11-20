@@ -3,12 +3,17 @@ import { useFetchPrefectures } from '../../hooks/useFetchPrefectures'
 import { Prefecture } from '../../types/globalType'
 import { CheckBox } from '../CheckBox'
 
+type Props = {
+  onChange: (prefCode: number, prefName: string, isCheck: boolean) => {}
+}
+
 const prefectureList = css`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   text-align: left;
 `
-export const PrefectureList: React.FC = () => {
+
+export const PrefectureList: React.FC<Props> = (props) => {
   const { data, isLoading } = useFetchPrefectures()
 
   if (isLoading) return <div>...isLoadingx</div>
@@ -20,7 +25,7 @@ export const PrefectureList: React.FC = () => {
             key={prefectureItem.prefCode}
             value={prefectureItem.prefCode}
             label={prefectureItem.prefName}
-            onChange={console.log}
+            onChange={props.onChange}
           />
         )
       })}
