@@ -33,7 +33,9 @@ describe('useFetchPopulationComposition', () => {
       wrapper
     })
     await waitFor(() => expect(result.current.isSuccess).toBe(true))
-    await waitFor(() => expect(result.current.data?.result.data).toHaveLength(4))
+    await waitFor(() =>
+      expect(result.current.data?.result.data).toHaveLength(4)
+    )
     await waitFor(() =>
       expect(result.current.data?.result.data[0].label).toBe('総人口')
     )
