@@ -36,11 +36,27 @@ export const HighChartGraph: React.FC<Props> = (props) => {
       verticalAlign: 'middle',
       itemHoverStyle: {
         fontWeight: 'bold'
-      }
+      },
+      borderWidth:1,
+      borderRadius: 5,
+      borderColor: '#c7c7c7',
+      padding:15
     },
     tooltip: {
       valueSuffix: '人',
-      shared: true
+      borderWidth: 2,
+      borderRadius: 10,
+      useHTML: true,
+      formatter() {
+        const value = this.y?.toLocaleString()
+        return `
+      <table><tr><th colspan="2">${this.x as string}年</th></tr>
+      <tr><td style="color: ${this.series.color as string}">${
+          this.series.name
+        }:</td><td style="text-align: right"><b>${
+          value as string
+        }人</b></td></tr></table>`
+      }
     },
     series:
       props.series.length === 0
