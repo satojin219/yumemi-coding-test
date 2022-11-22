@@ -8,7 +8,6 @@ const globalStyle = css`
   ${noramlize}
 `
 
-
 function App(): ReactElement {
   const queryClient = new QueryClient()
   return (

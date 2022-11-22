@@ -37,10 +37,10 @@ export const HighChartGraph: React.FC<Props> = (props) => {
       itemHoverStyle: {
         fontWeight: 'bold'
       },
-      borderWidth:1,
+      borderWidth: 1,
       borderRadius: 5,
       borderColor: '#c7c7c7',
-      padding:15
+      padding: 15
     },
     tooltip: {
       valueSuffix: '人',
