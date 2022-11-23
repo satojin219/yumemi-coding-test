@@ -24,10 +24,12 @@ export const HighChartGraph: React.FC<Props> = (props) => {
     },
     yAxis: {
       title: {
-        text: '人口数(万)'
+        text: '人口(万)'
       },
       gridLineWidth: 1,
       labels: {
+        x: -10,
+        y: 5,
         formatter() {
           return `${(this.value as number) / 10000}`
         }

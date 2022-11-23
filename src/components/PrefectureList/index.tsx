@@ -10,7 +10,10 @@ type Props = {
 const prefectureList = css`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  text-align: left;
+  place-items: left;
+  @media (max-width: 480px) {
+    font-size: 0.8em;
+  }
 `
 
 export const PrefectureList: React.FC<Props> = (props) => {
