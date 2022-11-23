@@ -1,4 +1,5 @@
 import { css } from '@emotion/react'
+import { Error } from './components/Error'
 import { HighChartGraph } from './components/HighChartGraph'
 import { Loading } from './components/Loading'
 import { PrefectureList } from './components/PrefectureList'
@@ -18,7 +19,7 @@ const label = css`
   border-left: 5px solid;
 `
 export const Home: React.FC = () => {
-  const { data, isLoading } = useFetchPrefectures()
+  const { data, isLoading,isError,error } = useFetchPrefectures()
   const { categories, series, addPrefecture, removePrefecture } =
     useCheckedPopulation()
 
@@ -44,6 +45,8 @@ export const Home: React.FC = () => {
         text="Now Loading"
       />
     )
+ 
+  if (isError) return <Error error={error} />
 
   return (
     <div css={container}>
