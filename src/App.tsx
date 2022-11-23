@@ -9,7 +9,15 @@ const globalStyle = css`
 `
 
 function App(): ReactElement {
-  const queryClient = new QueryClient()
+  const queryClient = new QueryClient({
+    defaultOptions: {
+      queries: {
+        retry: false,
+        refetchOnWindowFocus: false,
+        staleTime: Infinity,
+      }
+    }
+  })
   return (
     <QueryClientProvider client={queryClient}>
       <Global styles={globalStyle} />
