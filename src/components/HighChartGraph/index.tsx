@@ -8,8 +8,11 @@ type Props = {
 
 export const HighChartGraph: React.FC<Props> = (props) => {
   const options: Highcharts.Options = {
+    chart: {
+      type: 'column'
+    },
     title: {
-      text: '総人口推移'
+      text: ''
     },
     xAxis: {
       title: {
@@ -61,7 +64,23 @@ export const HighChartGraph: React.FC<Props> = (props) => {
     series:
       props.series.length === 0
         ? [{ type: 'line', name: '47都道府県', data: [] }]
-        : props.series
+        : props.series,
+    responsive: {
+      rules: [
+        {
+          condition: {
+            maxWidth: 500
+          },
+          chartOptions: {
+            legend: {
+              align: 'center',
+              verticalAlign: 'bottom',
+              layout: 'vertical'
+            }
+          }
+        }
+      ]
+    }
   }
 
   return <HighchartsReact highcharts={Highcharts} options={options} />
